@@ -1,38 +1,106 @@
-.App {
-  text-align: center;
+body{
+    background-color: #F3F2F2;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main-title{
+    font-family: 'Sansita Swashed', cursive;
+    color: #474bff;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.noti_header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.button-refresh{
+    background-color: #474bff;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
 }
-
-.App-link {
-  color: #61dafb;
+.noti_title{
+    color: white;
+    font-weight: bold;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.notificacioneslist_container{
+    width: 100%;
+    max-width: 300px;
+}
+.title_container{
+    background-color: #474bff;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 0 10px;
+    border-bottom: 2px solid gray;
+}
+.description_container{
+    padding: 0 10px;
+}
+.noti_container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+    border-radius: 20px;
+    height: auto;
+    margin-bottom: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.App{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.spinner {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 9px solid;
+    border-color: #dbdcef;
+    border-right-color: #474bff;
+    animation: spinner-d3wgkg 1s infinite linear;
+ }
+ 
+ @keyframes spinner-d3wgkg {
+    to {
+       transform: rotate(1turn);
+    }
+ }
+ .crypto_container{
+    display: flex;
+    background: rgb(0,76,166);
+background: linear-gradient(90deg, rgba(0,76,166,1) 0%, rgba(0,45,98,1) 100%);
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+ .crypto_info_container{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin-left: 10px;
+ }
+ .cryptoname_container{
+    margin-left: 10px;
+}
+.cryptoname{
+    font-weight: 700;
+    color: white;
+}
+.cryptocurrency{
+    color: rgb(211, 211, 211);
+}
+.cryptoprice{
+    font-weight: 700;
+    color: white;
+}
+.crypto_values_container{
+    margin-right: 20px;
+    text-align: end;
 }
