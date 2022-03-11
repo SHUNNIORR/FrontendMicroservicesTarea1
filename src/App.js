@@ -5,10 +5,13 @@ import ListarNotificaciones from "./components/ListarNotificaciones";
 function App() {
   
   return (
+    <div>
+      <h1 className="main-title">Notificaciones y Cryptos</h1>
     <div className="App">
-      <h1 className="main-title">Notificaciones</h1>
       <ListarNotificaciones/>
       <ListarCryptos/>
+    </div>
+
     </div>
   );
 }

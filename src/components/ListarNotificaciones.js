@@ -26,6 +26,7 @@ const ListarNotificaciones = () => {
 
   return (
     <div className="notificacioneslist_container">
+      
       <div className="noti_header">
         <h2>Listado de notificaciones</h2>
         <button
