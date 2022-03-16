@@ -1,23 +1,15 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { serviceGetNotifications } from "../services/notifications";
 
 const ListarNotificaciones = () => {
   const [notificaciones, setNotificaciones] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const getNotifications = () => {
+  const getNotifications = async() => {
     setIsLoading(true);
-    axios
-      .get(
-        "http://ec2-3-145-167-71.us-east-2.compute.amazonaws.com:4000/usuarios/notifications/1"
-      )
-      .then((response) => {
-        console.log(response.data);
-        setIsLoading(false);
-        setNotificaciones(response.data);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
+    setNotificaciones(await serviceGetNotifications())
+    setIsLoading(false)
+    console.log(notificaciones)
   };
 
   useEffect(() => {

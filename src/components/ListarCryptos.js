@@ -1,23 +1,14 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { serviceGetCryptos } from "../services/cryptos";
 
 const ListarCryptos = () => {
   const [cryptos, setCryptos] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const getCryptos = () => {
+  const getCryptos = async() => {
     setIsLoading(true);
-    axios
-      .get(
-        "https://api.nomics.com/v1/currencies/ticker?key=1e781756993904566d69091b11a9c3119e7b942d&ids=BTC,ETH,USDT&interval=1d,30d&convert=EUR&per-page=100&page=1"
-      )
-      .then((response) => {
-        console.log(response);
-        setIsLoading(false);
-        setCryptos(response.data)
-      })
-      .catch((e) => {
-        console.log(e);
-      });
+    setCryptos(await serviceGetCryptos())
+    setIsLoading(false)
   };
 
   useEffect(() => {
