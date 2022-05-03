@@ -1,20 +1,20 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { serviceGetNotifications } from "../services/notifications";
+import React, { useContext, useEffect, useReducer, useState } from "react";
+import NotificationContext from "../context/NotificationContext";
 
 const ListarNotificaciones = () => {
-  const [notificaciones, setNotificaciones] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const ctx = useContext(NotificationContext); // ⬅️
+  const { notificaciones, getNotis } = ctx; //
   const getNotifications = async() => {
-    setIsLoading(true);
-    setNotificaciones(await serviceGetNotifications())
-    setIsLoading(false)
-    console.log(notificaciones)
+    try {
+      setIsLoading(true);
+      await getNotis();
+      setIsLoading(false)
+    } catch (error) {
+      console.log(error);
+    }
   };
-
-  useEffect(() => {
-    getNotifications();
-  }, []);
 
   return (
     <div className="notificacioneslist_container">
